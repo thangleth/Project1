@@ -72,3 +72,50 @@
     </div>
     </div>
     <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid mb-5">
+        <div class="row border-top px-xl-5">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 w-100">
+                <a href="" class="text-decoration-none d-block d-lg-none mx-auto">
+                    <h1 class="m-0 display-5 font-weight-semi-bold">33Store</h1>
+                </a>
+                <button type="button" class="navbar-toggler mx-auto" data-toggle="collapse"
+                    data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.php" class="nav-link active">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.php?page=product" class="nav-link">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="detail.html" class="nav-link">Chi tiết mẫu</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Trang</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="cart.html" class="dropdown-item">Giỏ Hàng</a>
+                                <a href="checkout.html" class="dropdown-item">Thanh Toán</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Liên Hệ</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Đăng ký</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Navbar End -->
