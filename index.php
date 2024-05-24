@@ -1,4 +1,6 @@
 <?php
+    define('PRODUCT_ON_PAGE', 9);
+
     include "model/connect.php";
     include "model/product.php";
 
@@ -10,7 +12,12 @@
         switch($_GET['page']){
             case 'product':
                 // $catalog_list = get_catalog_list();
-                // $product_list = get_product_list();
+                if(isset($_GET['pg']) && ($_GET['pg']>0)){
+                    $active_pg=$_GET['pg'];
+                } else{
+                    $active_pg=1;
+                }
+                $product_list = get_product_page($active_pg);
                 include "view/product.php";
                 break;
             case 'product_detail':

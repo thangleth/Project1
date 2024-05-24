@@ -37,7 +37,7 @@
                         đầu tiên</h4>
                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Giày chạy bộ | Giày bóng
                         rổ</h3>
-                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <a href="index.php?page=product" class="btn btn-light py-2 px-3">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@
 <!-- Products Start -->
 <div class="container-fluid pt-5">
     <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Sản phẩm nổi bật</span></h2>
+        <h2 class="section-title px-5"><span class="px-2">SẢN PHẨM NỔI BẬT</span></h2>
     </div>
     <div class="row px-xl-5 pb-3">
         <?=$html_product_feature?>
