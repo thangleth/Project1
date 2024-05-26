@@ -20,6 +20,16 @@
                             </div>
                         </div>';
     }
+
+    $html_catalog = "";
+    foreach ($catalog_list as $item){
+        extract($item);
+        $link = 'index.php?page=product&iddm='.$iddm;
+        $html_catalog.='<div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="'.$link.'">'.$tendm.'</a>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>';
+    }
 ?>
 
 <!-- Page Header Start -->
@@ -43,38 +53,14 @@
         <div class="col-lg-3 col-md-12">
             <!-- Price Start -->
             <div class="border-bottom mb-4 pb-4">
-                <h5 class="font-weight-semi-bold mb-4">Lọc theo giá</h5>
+                <h5 class="font-weight-semi-bold mb-4">Lọc theo loại</h5>
                 <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                    <!-- <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" checked id="price-all">
                         <label class="custom-control-label" for="price-all">Tất cả giá</label>
                         <span class="badge border font-weight-normal">1000</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-1">
-                        <label class="custom-control-label" for="price-1">$0 - $100</label>
-                        <span class="badge border font-weight-normal">150</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-2">
-                        <label class="custom-control-label" for="price-2">$100 - $200</label>
-                        <span class="badge border font-weight-normal">295</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-3">
-                        <label class="custom-control-label" for="price-3">$200 - $300</label>
-                        <span class="badge border font-weight-normal">246</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-4">
-                        <label class="custom-control-label" for="price-4">$300 - $400</label>
-                        <span class="badge border font-weight-normal">145</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                        <input type="checkbox" class="custom-control-input" id="price-5">
-                        <label class="custom-control-label" for="price-5">$400 - $500</label>
-                        <span class="badge border font-weight-normal">168</span>
-                    </div>
+                    </div> -->
+                    <?=$html_catalog?>
                 </form>
             </div>
             <!-- Price End -->
@@ -174,21 +160,21 @@
                 <div class="col-12 pb-1">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center mb-3">
-                            <li class="page-item disabled">
+                            <!-- <li class="page-item disabled">
                                 <a class="page-link" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <?php
-                                echo pagination($active_pg,PRODUCT_ON_PAGE);
+                                echo phantrang($iddm_current,$current_pg,PRODUCT_ON_PAGE);
                             ?>
-                            <li class="page-item">
+                            <!-- <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                     <span class="sr-only">Next</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                 </div>
