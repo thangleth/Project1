@@ -1,7 +1,5 @@
 <div class="main-content">
-    <h3 class="title-page">
-        Thành viên
-    </h3>
+    <h3 class="title-page">Thành viên</h3>
     <div class="d-flex justify-content-end">
         <a href="addProduct.html" class="btn btn-dark mb-2">Thêm thành viên</a>
     </div>

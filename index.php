@@ -1,10 +1,19 @@
 <?php
-    define('PRODUCT_ON_PAGE', 6);
+    include  "dao/global.php";
+    include "dao/connect.php";
+    include "dao/product.php";
+    include "dao/catagory.php";
 
-    include "model/connect.php";
-    include "model/product.php";
-    include "model/catagory.php";
-
+    if (isset($_GET['page']) && ($_GET['page'] == 'login' || $_GET['page'] == 'register')) {
+        switch ($_GET['page']) {
+            case 'login':
+                include "view/login.php";
+                break;
+            case 'register':
+                include "view/register.php";
+                break;
+        }
+    } else {
     include "view/header.php";
     if(!isset($_GET['page'])){
         $product_feature = get_product_feature(4);
@@ -33,7 +42,9 @@
                 // $product_related = get_product_related();
                 // include "view/product_detail.php";
                 break;    
-    
+            case 'login':
+                include "view/login.php";
+                break;
             default:
                 include 'view/home.php';
                 break;
@@ -41,4 +52,5 @@
         
     }
     include "view/footer.php";
+}
 ?>

@@ -6,7 +6,7 @@
                                     <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                                         <div class="card product-item border-0 mb-4">
                                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <img class="img-fluid w-100" src="view/layout/img/'.$item["anh"].'" alt="">
+                                                <img class="img-fluid w-100" src="view/layout/img/'.$item["imgsp"].'" alt="">
                                             </div>
                                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                                 <h6 class="text-truncate mb-3">'.$tensp.'</h6>
@@ -31,7 +31,7 @@
         $html_product_new .= '<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                                 <div class="card product-item border-0 mb-4">
                                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="view/layout/img/'.$item["anh"].'" alt="">
+                                        <img class="img-fluid w-100" src="view/layout/img/'.$item["imgsp"].'" alt="">
                                     </div>
                                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                         <h6 class="text-truncate mb-3">'.$tensp.'</h6>
@@ -188,20 +188,20 @@
     <div class="row px-xl-5">
         <div class="col-md-6 pb-4">
             <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-                <img src="view/layout/img/offer-1.png" alt="">
+                <img src="view/layout/img/promotion1.jpg" alt="">
                 <div class="position-relative" style="z-index: 1;">
                     <h5 class="text-uppercase text-primary mb-3">Giảm 10% cho tất cả các đơn hàng </h5>
-                    <h1 class="mb-4 font-weight-semi-bold">Ly giữ nhiệt</h1>
+                    <h1 class="mb-4 font-weight-semi-bold">Giày thể thao</h1>
                     <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                 </div>
             </div>
         </div>
         <div class="col-md-6 pb-4">
             <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-                <img src="view/layout/img/offer-2.png" alt="">
+                <img src="view/layout/img/promotion2.jpg" alt="">
                 <div class="position-relative" style="z-index: 1;">
                     <h5 class="text-uppercase text-primary mb-3">Giảm 10% cho tất cả các đơn hàng</h5>
-                    <h1 class="mb-4 font-weight-semi-bold">Bình giữ nhiệt</h1>
+                    <h1 class="mb-4 font-weight-semi-bold">Phụ kiện</h1>
                     <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                 </div>
             </div>
@@ -244,26 +244,6 @@
         <h2 class="section-title px-5"><span class="px-2">SẢN PHẨM MỚI</span></h2>
     </div>
     <div class="row px-xl-5 pb-3">
-        <!-- <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="view/layout/img/product-1.jpg" alt="">
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Bình giữ nhiệt inox 500ml</h6>
-                    <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View
-                        Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i
-                            class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                </div>
-            </div>
-        </div> -->
         <?=$html_product_new?>
     </div>
 </div>

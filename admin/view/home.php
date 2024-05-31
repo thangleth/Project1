@@ -7,9 +7,7 @@
             <a href="products.html">
                 <div class="card mb-3 widget-chart">
                     <div class="widget-subheading fsize-1 pt-2 opacity-10 text-warning font-weight-bold">
-                        <h5>
-                            Tổng sản phẩm
-                        </h5>
+                        <h5>Tổng sản phẩm</h5>
                     </div>
                     <span class="widget-numbers">3M</span>
                 </div>
@@ -20,9 +18,7 @@
                 <div class="card mb-3 widget-chart">
 
                     <div class="widget-subheading fsize-1 pt-2 opacity-10 text-warning font-weight-bold">
-                        <h5>
-                            Tổng thành viên
-                        </h5>
+                        <h5>Tổng thành viên</h5>
                     </div>
                     <span class="widget-numbers">3M</span>
                 </div>
@@ -32,9 +28,7 @@
             <a href="caterogies.html">
                 <div class="card mb-3 widget-chart">
                     <div class="widget-subheading fsize-1 pt-2 opacity-10 text-warning font-weight-bold">
-                        <h5>
-                            Tổng doanh mục
-                        </h5>
+                        <h5>Tổng doanh mục</h5>
                     </div>
                     <span class="widget-numbers">3M</span>
                 </div>
@@ -44,9 +38,7 @@
             <a href="#">
                 <div class="card mb-3 widget-chart">
                     <div class="widget-subheading fsize-1 pt-2 opacity-10 text-warning font-weight-bold">
-                        <h5>
-                            Tổng doanh mục
-                        </h5>
+                        <h5>Tổng doanh mục</h5>
                     </div>
                     <span class="widget-numbers">3M</span>
                 </div>

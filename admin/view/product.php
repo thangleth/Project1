@@ -28,7 +28,7 @@
                         echo '<tr>
                                 <td>'.$i.'</td>
                                 <td>'.$tensp.'</td>
-                                <td><img src="../upload/img/'.$anh.'" alt="" style="width: 120px;"></td>
+                                <td><img src="../upload/img/'.$imgsp.'" alt="" style="width: 120px;"></td>
                                 <td>'.$soluong.'</td>
                                 <td>'.$gia.'</td>
                                 <td>'.$noibat.'</td>

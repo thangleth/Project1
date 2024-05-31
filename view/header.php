@@ -104,10 +104,10 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link">Đăng nhập</a>
+                            <a href="index.php?page=login" class="nav-link">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Đăng ký</a>
+                            <a href="index.php?page=register" class="nav-link">Đăng ký</a>
                         </li>
                     </ul>
                 </div>

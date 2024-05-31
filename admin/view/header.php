@@ -17,7 +17,7 @@
     </script>
     <link rel="stylesheet" href="view/layout/assets/css/main.css">
     <script src="https://kit.fontawesome.com/8c204d0fdf.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 
 <body>
