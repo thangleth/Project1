@@ -28,4 +28,26 @@ function select_all($sql){
         return [];
     }
 }
+function select_one($sql){
+    $conn = connectdb();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $list = $stmt->fetch();
+    $conn = null;
+    return $list;
+}
+// sử dụng cho insert và delete sql
+function exec_sql($sql){
+    $conn = connectdb();
+    $conn->exec($sql);
+    $conn = null;
+}
+function update($sql){
+    $conn = connectdb();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $conn = null;
+}
 ?>

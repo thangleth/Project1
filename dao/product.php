@@ -1,20 +1,43 @@
 <?php
+    function get_product($iddm=0){
+        $sql="SELECT * FROM sanpham WHERE 1";
+        if($iddm>0){
+        $sql.=" AND iddm=".$iddm;
+        }
+        $sql.=" ORDER BY id DESC";
+        return select_all($sql);
+    }
+    function get_sale_product(){
+        $sql="SELECT * FROM sanpham WHERE promotion>0 ORDER BY promotion DESC";
+        return select_all($sql);
+    }
+    function get_feature_product(){
+        $sql="SELECT * FROM sanpham WHERE new=1 ORDER BY id DESC";
+        return select_all($sql);
+    }
     function get_product_new($limit) {
         $sql = "SELECT * FROM sanpham ORDER BY ngaytao DESC LIMIT $limit";
-        $result = select_all($sql);
-        return $result;
+        return select_all($sql);
     }
     function get_product_feature($limit) {
         $sql = "SELECT * FROM sanpham WHERE noibat = 1 ORDER BY idsp DESC LIMIT $limit";
-        $result = select_all($sql);
-        return $result;
-    }
-      
-    function get_product_list(){
-        $sql = "SELECT * FROM sanpham";
         return select_all($sql);
     }
-
+      
+    function get_product_list() {
+        $sql = "SELECT * FROM sanpham";
+        return  select_all($sql);
+    }
+    function get_product_detail($idsp) {
+        $sql = "SELECT * FROM sanpham WHERE idsp=" . $idsp;
+        return select_one($sql);
+    }
+    function get_product_img($idsp){
+        $sql = "SELECT imgsp FROM sanpham WHERE idsp=".$idsp;
+        // $detail=select_one($sql);
+        // extract($detail);
+        return select_one($sql);
+        }
     function get_all_product($iddm,$pg) {
         $page_start=PRODUCT_ON_PAGE*($pg-1);
         
@@ -23,8 +46,7 @@
             $sql .=" AND iddm=".$iddm;
         }
         $sql .=" ORDER BY iddm DESC LIMIT ".$page_start.",".PRODUCT_ON_PAGE;
-        $get_all_product = select_all($sql);
-        return $get_all_product;
+        return  select_all($sql);
     }
 
     // Hàm phân trang
@@ -51,6 +73,24 @@
         }
         
         return $html_phantrang;
+    }
+    function delete_sp($idsp){
+        $sql = "DELETE FROM sanpham WHERE idsp=".$idsp;
+        exec_sql($sql);
+    }
+    function add_sp($iddm,$name,$price,$price2,$img){
+        $sql = "INSERT INTO sanpham (iddm,tensp, imgsp, gia,giagoc) VALUES ('$iddm', '$name', '$img','$price','$price2')";
+        exec_sql($sql);
+    }
+    function update_sp($iddm,$idsp,$name,$img,$price) {
+        $sql = "UPDATE sanpham SET iddm='$iddm',tensp='$name', imgsp='$img',gia='$price' WHERE idsp=$idsp";
+        echo($sql);
+        return update($sql);
+    }
+    function check_khoa_ngoai($iddm){
+        $sql = "SELECT * FROM sanpham WHERE iddm=".$iddm;
+        $prolist=select_all($sql);
+        return count($prolist);
     }
     
 ?>
