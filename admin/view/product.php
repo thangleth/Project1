@@ -92,16 +92,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Mô tả ngắn</label>
-                                <textarea class="form-control" name="description" rows="3"
-                                    placeholder="Nhập 1 đoạn mô tả ngắn về sản phẩm" style="height: 78px;"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Mô tả chi tiết</label>
-                                <textarea class="form-control" name="detail" rows="3"
-                                    placeholder="Nhập 1 đoạn mô tả ngắn về sản phẩm" style="height: 78px;"></textarea>
-                            </div>
-                            <div class="form-group">
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>

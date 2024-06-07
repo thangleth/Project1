@@ -26,6 +26,16 @@
             include_once 'view/product.php';
             include_once 'view/footer.php';
             break;
+        case 'login':
+            include_once 'view/header.php';
+            include_once 'view/login.php';
+            include_once 'view/footer.php';
+            break;
+        case 'register':
+            include_once 'view/header.php';
+            include_once 'view/register.php';
+            include_once 'view/footer.php';
+            break;
         default:
             include_once 'view/home.php';
             break;

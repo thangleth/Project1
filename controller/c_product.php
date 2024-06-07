@@ -77,6 +77,11 @@
             }
             header('Location: ?ctrl=product&view=cart');
             break;
+        case 'checkout':
+            include_once 'view/header.php';
+            include 'view/checkout.php';
+            include_once 'view/footer.php';
+            break;     
         default:
             include_once 'view/home.php';
             break;

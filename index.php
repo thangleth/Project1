@@ -3,6 +3,7 @@
     include "models/connect.php";
     include "models/product.php";
     include "models/category.php";
+    include "models/user.php";
 
     switch ($_GET['ctrl']) {
         case 'page':

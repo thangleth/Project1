@@ -1,10 +1,10 @@
 <?php
     ob_start();
-    include '../dao/global.php';
-    include '../dao/connect.php';
-    include '../dao/product.php';
-    include '../dao/category.php';
-    include '../dao/user.php';
+    include '../models/global.php';
+    include '../models/connect.php';
+    include '../models/product.php';
+    include '../models/category.php';
+    include '../models/user.php';
     include 'view/header.php';
     if (!isset($_GET['page'])) {
         include "view/home.php";

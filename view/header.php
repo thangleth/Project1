@@ -24,7 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="view/layout/css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="view/layout/css/login.css">
 </head>
 
 <body>
