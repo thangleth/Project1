@@ -14,11 +14,8 @@
                                                 <h6>đ '.number_format($gia,0, ".", ",") .'</h6>
                                                 </div>
                                             </div>
-                                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi
-                                                    tiết</a>
-                                                <a href="" class="btn btn-sm text-dark p-0"><i
-                                                        class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
+                                            <div class="card-footer d-flex justify-content-center mt-2 bg-light border">
+                                                <a href="?ctrl=product&view=detail&id='.$idsp.'" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                             </div>
                                         </div>
                                     </div>
@@ -39,14 +36,25 @@
                                             <h6>đ '.number_format($gia,0, ".", ",") .'</h6>
                                         </div>
                                     </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View
-                                            Detail</a>
-                                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                                class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                    <div class="card-footer d-flex justify-content-center mt-2 bg-light border">
+                                        <a href="?ctrl=product&view=detail&id='.$idsp.'" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     </div>
                                 </div>
                             </div>';
+    }
+    
+    $html_home_catalog = "";
+    foreach ($home_catalog as $item){
+        extract($item);
+        $link = '?ctrl=page&view=product&iddm='.$iddm;
+        $html_home_catalog.='<div class="col-lg-4 col-md-6 pb-1">
+                            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                                <a href="'.$link.'" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" style="height: 400px; width: 400px;" src="upload/img/'.$imgdm.'" alt=" ">
+                                </a>
+                                <h4 class="font-weight-semi-bold m-0">'.$tendm.'</h4>
+                            </div>
+                        </div>';
     }
 ?>
 
@@ -61,7 +69,7 @@
                         đầu tiên</h4>
                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Giày chạy bộ | Giày bóng
                         rổ</h3>
-                    <a href="index.php?page=product" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <a href="?ctrl=page&view=product" class="btn btn-light py-2 px-3">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -72,7 +80,7 @@
                     <h4 class="text-light text-uppercase font-weight-medium mb-3">Giảm 10% cho đơn hàng
                         đầu tiên</h4>
                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Giá cả hợp lí</h3>
-                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <a href="?ctrl=page&view=product" class="btn btn-light py-2 px-3">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -123,61 +131,7 @@
 <!-- Categories Start -->
 <div class="container-fluid pt-5">
     <div class="row px-xl-5 pb-3">
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 sản phẩm</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" style="height: 400px; width: 400px;" src="view/layout/img/trend1.jpg"
-                        alt=" ">
-                </a>
-                <h4 class="font-weight-semi-bold m-0">Thời trang</h4>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 sản phẩm</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" style="height: 400px; width: 400px" src="view/layout/img/trend2.jpg" alt="">
-                </a>
-                <h4 class="font-weight-semi-bold m-0">Chạy bộ</h4>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 sản phẩm</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" style="height: 400px; width: 400px" src="view/layout/img/trend3.jpg" alt="">
-                </a>
-                <h4 class="font-weight-semi-bold m-0">Bóng rổ</h4>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 sản phẩm</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" style="height: 400px; width: 400px" src="view/layout/img/trend4.jpg" alt="">
-                </a>
-                <h4 class="font-weight-semi-bold m-0">Tập luyện</h4>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 sản phẩm </p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" style="height: 400px;" src="view/layout/img/trend5.jpg" alt="">
-                </a>
-                <h4 class="font-weight-semi-bold m-0">Dép</h4>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 sản phẩm</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" style="height: 400px;" src="view/layout/img/trend6.jpg" alt="">
-                </a>
-                <h4 class="font-weight-semi-bold m-0">Phụ kiện</h4>
-            </div>
-        </div>
+        <?=$html_home_catalog?>
     </div>
 </div>
 <!-- Categories End -->
@@ -192,7 +146,7 @@
                 <div class="position-relative" style="z-index: 1;">
                     <h5 class="text-uppercase text-primary mb-3">Giảm 10% cho tất cả các đơn hàng </h5>
                     <h1 class="mb-4 font-weight-semi-bold">Giày thể thao</h1>
-                    <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
+                    <a href="?ctrl=page&view=product" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -202,7 +156,7 @@
                 <div class="position-relative" style="z-index: 1;">
                     <h5 class="text-uppercase text-primary mb-3">Giảm 10% cho tất cả các đơn hàng</h5>
                     <h1 class="mb-4 font-weight-semi-bold">Phụ kiện</h1>
-                    <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
+                    <a href="?ctrl=page&view=product" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                 </div>
             </div>
         </div>

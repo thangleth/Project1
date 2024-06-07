@@ -28,6 +28,7 @@ function select_all($sql){
         return [];
     }
 }
+
 function select_one($sql){
     $conn = connectdb();
     $stmt = $conn->prepare($sql);
@@ -49,5 +50,22 @@ function update($sql){
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $conn = null;
+}
+
+function pdo_query($sql){
+    $sql_args = array_slice(func_get_args(), 1);
+    try{
+        $conn = connectdb();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
 }
 ?>

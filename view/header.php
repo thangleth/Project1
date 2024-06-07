@@ -11,6 +11,9 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -19,11 +22,9 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="view/layout/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -86,15 +87,15 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link active">Trang chủ</a>
+                            <a href="?ctrl=page&view=home" class="nav-link active">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=product" class="nav-link">Sản phẩm</a>
+                            <a href="?ctrl=page&view=product" class="nav-link">Cửa hàng</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Trang</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="cart.html" class="dropdown-item">Giỏ Hàng</a>
+                                <a href="?ctrl=product&view=cart" class="dropdown-item">Giỏ Hàng</a>
                                 <a href="checkout.html" class="dropdown-item">Thanh Toán</a>
                             </div>
                         </li>
@@ -103,12 +104,23 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <span id="user-info">Thắng</span>
+                            <img src="upload/avatar/user.jpg" style="width: 60px;" alt="">
+                        </a>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown-menu dropdown-menu-right rounded-0 m-0">
+                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item">
                             <a href="index.php?page=login" class="nav-link">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
                             <a href="index.php?page=register" class="nav-link">Đăng ký</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>

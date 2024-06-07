@@ -5,7 +5,7 @@
         $html_product .='<div class="col-lg-4 col-md-6 col-sm-12 pb-1">
                             <div class="card product-item border-0 mb-4">
                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <img class="img-fluid w-100" src="view/layout/img/'.$item["anh"].'" alt="">
+                                    <img class="img-fluid w-100" src="upload/img/'.$item["imgsp"].'" style="height:200px" alt="">
                                 </div>
                                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                     <h6 class="text-truncate mb-3">'.$tensp.'</h6>
@@ -13,21 +13,18 @@
                                         <h6>đ '.number_format($gia,0, ".", ",") .'</h6>
                                     </div>
                                 </div>
-                                <div class="card-footer d-flex justify-content-between bg-light border">
-                                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                <div class="card-footer d-flex justify-content-center mt-2 bg-light border">
+                                    <a href="?ctrl=product&view=detail&id='.$idsp.'" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                 </div>
                             </div>
                         </div>';
     }
-
     $html_catalog = "";
     foreach ($catalog_list as $item){
         extract($item);
-        $link = 'index.php?page=product&iddm='.$iddm;
+        $link = '?ctrl=page&view=product&iddm='.$iddm;
         $html_catalog.='<div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="'.$link.'">'.$tendm.'</a>
-                            <span class="badge border font-weight-normal">1000</span>
                         </div>';
     }
 ?>
@@ -40,6 +37,18 @@
             <p class="m-0"><a href="">Trang chủ</a></p>
             <p class="m-0 px-2">-</p>
             <p class="m-0">Cửa Hàng</p>
+            <?php
+                if (isset($_GET['iddm'])) {
+                    $iddm = $_GET['iddm'];
+                    foreach ($home_catalog as $item) {
+                        if ($item['iddm'] == $iddm) {
+                        echo '
+                        <p class="m-0 px-2">-</p>
+                        <p class="m-0">' . $item['tendm'] . '</p>';
+                        break;}
+                    }
+                }
+            ?>
         </div>
     </div>
 </div>
@@ -54,14 +63,7 @@
             <!-- Price Start -->
             <div class="border-bottom mb-4 pb-4">
                 <h5 class="font-weight-semi-bold mb-4">Lọc theo loại</h5>
-                <form>
-                    <!-- <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="price-all">
-                        <label class="custom-control-label" for="price-all">Tất cả giá</label>
-                        <span class="badge border font-weight-normal">1000</span>
-                    </div> -->
-                    <?=$html_catalog?>
-                </form>
+                <?=$html_catalog?>
             </div>
             <!-- Price End -->
 
@@ -102,10 +104,8 @@
                 </form>
             </div>
             <!-- Color End -->
-
         </div>
         <!-- Shop Sidebar End -->
-
 
         <!-- Shop Product Start -->
         <div class="col-lg-9 col-md-12">
@@ -136,27 +136,6 @@
                     </div>
                 </div>
                 <?=$html_product ?>
-                <!-- <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                    <div class="card product-item border-0 mb-4">
-                        <div
-                            class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6>
-                                <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View
-                                Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i
-                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="col-12 pb-1">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center mb-3">

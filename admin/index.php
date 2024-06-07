@@ -3,7 +3,7 @@
     include '../dao/global.php';
     include '../dao/connect.php';
     include '../dao/product.php';
-    include '../dao/catagory.php';
+    include '../dao/category.php';
     include '../dao/user.php';
     include 'view/header.php';
     if (!isset($_GET['page'])) {

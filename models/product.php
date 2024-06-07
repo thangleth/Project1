@@ -1,6 +1,6 @@
 <?php
     function get_product($iddm=0){
-        $sql="SELECT * FROM sanpham WHERE 1";
+        $sql="SELECT * FROM product WHERE 1";
         if($iddm>0){
         $sql.=" AND iddm=".$iddm;
         }
@@ -8,32 +8,35 @@
         return select_all($sql);
     }
     function get_sale_product(){
-        $sql="SELECT * FROM sanpham WHERE promotion>0 ORDER BY promotion DESC";
+        $sql="SELECT * FROM product WHERE promotion>0 ORDER BY promotion DESC";
         return select_all($sql);
     }
     function get_feature_product(){
-        $sql="SELECT * FROM sanpham WHERE new=1 ORDER BY id DESC";
+        $sql="SELECT * FROM product WHERE new=1 ORDER BY id DESC";
         return select_all($sql);
     }
     function get_product_new($limit) {
-        $sql = "SELECT * FROM sanpham ORDER BY ngaytao DESC LIMIT $limit";
+        $sql = "SELECT * FROM product ORDER BY ngaytao DESC LIMIT $limit";
         return select_all($sql);
     }
     function get_product_feature($limit) {
-        $sql = "SELECT * FROM sanpham WHERE noibat = 1 ORDER BY idsp DESC LIMIT $limit";
+        $sql = "SELECT * FROM product WHERE noibat = 1 ORDER BY idsp DESC LIMIT $limit";
         return select_all($sql);
     }
-      
+    function get_product_related($iddm,$idsp) {
+        $sql = "SELECT * FROM product WHERE iddm=? AND idsp<>? LIMIT 4";
+        return pdo_query($sql,$iddm,$idsp);
+    }
     function get_product_list() {
-        $sql = "SELECT * FROM sanpham";
+        $sql = "SELECT * FROM product";
         return  select_all($sql);
     }
     function get_product_detail($idsp) {
-        $sql = "SELECT * FROM sanpham WHERE idsp=" . $idsp;
+        $sql = "SELECT * FROM product WHERE idsp=" . $idsp;
         return select_one($sql);
     }
     function get_product_img($idsp){
-        $sql = "SELECT imgsp FROM sanpham WHERE idsp=".$idsp;
+        $sql = "SELECT imgsp FROM product WHERE idsp=".$idsp;
         // $detail=select_one($sql);
         // extract($detail);
         return select_one($sql);
@@ -41,7 +44,7 @@
     function get_all_product($iddm,$pg) {
         $page_start=PRODUCT_ON_PAGE*($pg-1);
         
-        $sql = "SELECT * FROM sanpham WHERE 1";
+        $sql = "SELECT * FROM product WHERE 1";
         if($iddm>0){
             $sql .=" AND iddm=".$iddm;
         }
@@ -60,7 +63,7 @@
         $html_phantrang = "";
         
         for ($i = 1; $i <= $pg; $i++) {
-            $link = 'index.php?page=product&pg='.$i;
+            $link = '?ctrl=page&view=product&pg='.$i;
             if ($iddm >0) {
                 $link.='&iddm='.$iddm;
             }
@@ -75,20 +78,20 @@
         return $html_phantrang;
     }
     function delete_sp($idsp){
-        $sql = "DELETE FROM sanpham WHERE idsp=".$idsp;
+        $sql = "DELETE FROM product WHERE idsp=".$idsp;
         exec_sql($sql);
     }
     function add_sp($iddm,$name,$price,$price2,$img){
-        $sql = "INSERT INTO sanpham (iddm,tensp, imgsp, gia,giagoc) VALUES ('$iddm', '$name', '$img','$price','$price2')";
+        $sql = "INSERT INTO product (iddm,tensp, imgsp, gia,giagoc) VALUES ('$iddm', '$name', '$img','$price','$price2')";
         exec_sql($sql);
     }
     function update_sp($iddm,$idsp,$name,$img,$price) {
-        $sql = "UPDATE sanpham SET iddm='$iddm',tensp='$name', imgsp='$img',gia='$price' WHERE idsp=$idsp";
+        $sql = "UPDATE product SET iddm='$iddm',tensp='$name', imgsp='$img',gia='$price' WHERE idsp=$idsp";
         echo($sql);
         return update($sql);
     }
     function check_khoa_ngoai($iddm){
-        $sql = "SELECT * FROM sanpham WHERE iddm=".$iddm;
+        $sql = "SELECT * FROM product WHERE iddm=".$iddm;
         $prolist=select_all($sql);
         return count($prolist);
     }
