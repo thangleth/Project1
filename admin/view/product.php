@@ -137,10 +137,7 @@
 </div>
 </div>
 </div>
-<script src="assets/js/main.js"></script>
-<script>
-new DataTable('#example');
-</script>
+<script src="view/layout/assets/js/main.js"></script>
 </body>
 
 </html>

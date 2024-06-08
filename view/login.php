@@ -1,21 +1,21 @@
 <section>
     <div class="form-box" id="login">
         <div class="form-value">
-            <form action="dao/login.php" method="POST" enctype="multipart/form-data">
-                <h2>Login</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <h2>Đăng nhập</h2>
                 <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" name="username" required>
-                    <label for="">Username</label>
+                    <input type="text" name="email" required>
+                    <label for="">Email</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     <input type="password" name="password" required>
-                    <label for="">Password</label>
+                    <label for="">Mật khẩu</label>
                 </div>
-                <button type="submit" name="submit">Login</button>
+                <button type="submit" name="submit">Đăng nhập</button>
                 <div class="register">
-                    <p><a href="?ctrl=page&view=register" class="nav-link">Register</a></p>
+                    <p><a href="?ctrl=user&view=register" class="nav-link">Đăng ký</a></p>
                 </div>
             </form>
         </div>

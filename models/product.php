@@ -4,24 +4,24 @@
         if($iddm>0){
         $sql.=" AND iddm=".$iddm;
         }
-        $sql.=" ORDER BY id DESC";
-        return select_all($sql);
+        $sql.=" ORDER BY id ASC";
+        return pdo_query($sql);
     }
     function get_sale_product(){
         $sql="SELECT * FROM product WHERE promotion>0 ORDER BY promotion DESC";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function get_feature_product(){
         $sql="SELECT * FROM product WHERE new=1 ORDER BY id DESC";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function get_product_new($limit) {
         $sql = "SELECT * FROM product ORDER BY ngaytao DESC LIMIT $limit";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function get_product_feature($limit) {
         $sql = "SELECT * FROM product WHERE noibat = 1 ORDER BY idsp DESC LIMIT $limit";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function get_product_related($iddm,$idsp) {
         $sql = "SELECT * FROM product WHERE iddm=? AND idsp<>? LIMIT 4";
@@ -29,17 +29,17 @@
     }
     function get_product_list() {
         $sql = "SELECT * FROM product";
-        return  select_all($sql);
+        return  pdo_query($sql);
     }
     function get_product_detail($idsp) {
         $sql = "SELECT * FROM product WHERE idsp=" . $idsp;
-        return select_one($sql);
+        return pdo_query_one($sql);
     }
     function get_product_img($idsp){
         $sql = "SELECT imgsp FROM product WHERE idsp=".$idsp;
         // $detail=select_one($sql);
         // extract($detail);
-        return select_one($sql);
+        return pdo_query_one($sql);
         }
     function get_all_product($iddm,$pg) {
         $page_start=PRODUCT_ON_PAGE*($pg-1);
@@ -48,8 +48,8 @@
         if($iddm>0){
             $sql .=" AND iddm=".$iddm;
         }
-        $sql .=" ORDER BY iddm DESC LIMIT ".$page_start.",".PRODUCT_ON_PAGE;
-        return  select_all($sql);
+        $sql .=" ORDER BY iddm ASC LIMIT ".$page_start.",".PRODUCT_ON_PAGE;
+        return  pdo_query($sql);
     }
 
     // Hàm phân trang
@@ -92,7 +92,7 @@
     }
     function check_khoa_ngoai($iddm){
         $sql = "SELECT * FROM product WHERE iddm=".$iddm;
-        $prolist=select_all($sql);
+        $prolist=pdo_query($sql);
         return count($prolist);
     }
     

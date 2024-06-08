@@ -1,23 +1,23 @@
 <?php
     function get_catalog() {
         $sql ="SELECT * FROM category WHERE 1 ORDER BY tendm";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function get_catalog_list() {
         $sql ="SELECT * FROM category";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function home_catalog_list() {
         $sql ="SELECT * FROM category WHERE hienthi = 1";
-        return select_all($sql);
+        return pdo_query($sql);
     }
     function get_catalog_one($iddm){
         $sql = "SELECT * FROM category WHERE iddm=".$iddm;
-        return select_one($sql);
+        return pdo_query_one($sql);
     }
     function get_category_name($iddm){
         $sql = "SELECT * FROM category WHERE iddm=".$iddm;
-        $sp = select_one($sql);
+        $sp = pdo_query_one($sql);
         extract($sp);
         return $tendm;
     }

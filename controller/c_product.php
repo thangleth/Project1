@@ -1,12 +1,11 @@
 <?php
-    session_start();
-    // unset($_SESSION['cart']);
     switch($_GET['view']){
         case 'detail':
             $sp = get_product_detail($_GET['id']);
             $iddm = $sp['iddm'];
             $idsp = $sp['idsp'];
             $sp_lienquan = get_product_related($iddm,$idsp);
+            $list_comment = get_commentbyProduct($_GET['id']);
             
             include_once 'view/header.php';
             include 'view/detail.php';

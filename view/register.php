@@ -1,17 +1,12 @@
 <section>
     <div class="form-box" id="signup">
         <div class="form-value">
-            <form action="dao/register.php" method="POST" enctype="multipart/form-data">
-                <h2>Register</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <h2>Đăng ký</h2>
                 <div class="inputbox">
                     <ion-icon name="person-outline"></ion-icon>
                     <input type="text" name="name" required>
-                    <label for="">Full Name</label>
-                </div>
-                <div class="inputbox">
-                    <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" name="username" required>
-                    <label for="">Username</label>
+                    <label for="">Họ tên</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
@@ -21,17 +16,14 @@
                 <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     <input type="password" name="password" required>
-                    <label for="">Password</label>
+                    <label for="">Mật khẩu</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" name="confirmpassword" required>
-                    <label for="">Confirm Password</label>
+                    <input type="password" name="repassword" required>
+                    <label for="">Xác nhận mật khẩu</label>
                 </div>
-                <button type="submit" name="submit">Register</button>
-                <div class="register">
-                    <p><a href="index.php?page=login" class="nav-link">Login</a></p>
-                </div>
+                <button type="submit" name="submit">Đăng ký</button>
             </form>
         </div>
     </div>

@@ -152,15 +152,15 @@
                 if (isset($_POST['btnadduser'])) {
                     $name = $_POST['name'];
                     $password = $_POST['password'];
-                    $sdt = $_POST['sdt'];
+                    $phone = $_POST['phone'];
                     $address = $_POST['address'];
                     $role = $_POST['role'];
                     $img = $_FILES['image']['name'];
                     if ($img != '') {
-                        $hinh = '../' . PATH_IMG . $img;
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $hinh);
+                        $img_user = '../' . PATH_IMG . $img;
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $img_user);
                     }
-                    add_user($name, $password, $sdt, $img, $address, $role);
+                    add_user($name, $password, $phone, $img, $address, $role);
                     $nguoidung = get_user_list();
                     header('location:index.php?page=user');
                     include "view/user.php";
@@ -171,16 +171,16 @@
                     $iduser = $_POST['iduser'];
                     $name = $_POST['name'];
                     $password = $_POST['password'];
-                    $sdt = $_POST['sdt'];
+                    $phone = $_POST['phone'];
                     $address = $_POST['address'];
                     $role = $_POST['role'];
                     $img = $_FILES['image']['name'];
                     if ($img != '') {
-                        $hinh = '../' . PATH_IMG . $img;
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $hinh);
+                        $img_user = '../' . PATH_IMG . $img;
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $img_user);
                         $img_cu = '../' . PATH_IMG .$_POST['imgcu'];
                         if(file_exists($img_cu));
-                        update_user($iduser,$name, $password, $sdt, $img, $address, $role);
+                        update_user($iduser,$name, $password, $phone, $img, $address, $role);
                     }else{
                         $img='';
                     }

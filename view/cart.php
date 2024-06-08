@@ -62,8 +62,7 @@
                     ?>
                 </tbody>
             </table>
-            <td class="align-right"><a href="?ctrl=product&view=removeAllCart" class="btn btn-sm btn-primary">Xóa giỏ
-                    hàng</a></td>
+            <a href="?ctrl=product&view=removeAllCart" class="btn btn-primary mt-2">Xóa giỏ hàng</a>
         </div>
         <div class="col-lg-4">
             <form class="mb-5" action="">
@@ -93,7 +92,7 @@
                         <h5 class="font-weight-bold">Tổng</h5>
                         <h5 class="font-weight-bold"><?=number_format($thanhtien,0, ".", ",")?>đ</h5>
                     </div>
-                    <button class="btn btn-block btn-primary my-3 py-3">Thanh toán</button>
+                    <button class="btn-primary my-3"><a href="?ctrl=product&view=checkout">Thanh toán</a></button>
                 </div>
             </div>
         </div>

@@ -45,7 +45,7 @@
     <div class="row align-items-center py-3 px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a href="" class="text-decoration-none">
-                <h1 class="m-0 display-5 font-weight-semi-bold"></span>33Store</h1>
+                <h1 class="m-0 display-5 font-weight-semi-bold"><a href="?ctrl=page&view=home">33Store</a></h1>
             </a>
         </div>
         <div class="col-lg-6 col-6 text-left">
@@ -63,11 +63,11 @@
         <div class="col-lg-3 col-6 text-right">
             <a href="" class="btn border">
                 <i class="fas fa-heart text-primary"></i>
-                <span class="badge">0</span>
+                <!-- <span class="badge">0</span> -->
             </a>
-            <a href="" class="btn border">
+            <a href="?ctrl=product&view=cart" class="btn border">
                 <i class="fas fa-shopping-cart text-primary"></i>
-                <span class="badge">0</span>
+                <!-- <span class="badge">0</span> -->
             </a>
         </div>
     </div>
@@ -104,23 +104,25 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
+                        <?php if(!isset($_SESSION['user'])): ?>
+                        <li class="nav-item">
+                            <a href="?ctrl=user&view=login" class="nav-link">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="?ctrl=user&view=register" class="nav-link">Đăng ký</a>
+                        </li>
+                        <?php else: ?>
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                            <span id="user-info">Thắng</span>
-                            <img src="upload/avatar/user.jpg" style="width: 60px;" alt="">
+                            <span id="user-info"><?=$_SESSION['user']['name']?></span>
+                            <img src="upload/avatar/<?=$_SESSION['user']['img_user']?>" style="width: 60px;" alt="">
                         </a>
                         <li class="nav-item dropdown">
                             <div class="dropdown-menu dropdown-menu-right rounded-0 m-0">
-                                <a href="#" class="dropdown-item">Profile</a>
-                                <a href="#" class="dropdown-item">Settings</a>
-                                <a href="#" class="dropdown-item">Logout</a>
+                                <a href="?ctrl=user&view=profile" class="dropdown-item">Hồ sơ</a>
+                                <a href="?ctrl=user&view=logout" class="dropdown-item">Đăng xuất</a>
                             </div>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="index.php?page=login" class="nav-link">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.php?page=register" class="nav-link">Đăng ký</a>
-                        </li> -->
+                        <?php endif ?>
                     </ul>
                 </div>
             </nav>
