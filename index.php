@@ -1,5 +1,6 @@
 <?php
     session_start();
+    // session_destroy();
     include  "models/global.php";
     include "models/connect.php";
     include "models/product.php";

@@ -96,7 +96,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Trang</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="?ctrl=product&view=cart" class="dropdown-item">Giỏ Hàng</a>
-                                <a href="checkout.html" class="dropdown-item">Thanh Toán</a>
+                                <a href="?ctrl=product&view=checkout" class="dropdown-item">Thanh Toán</a>
                             </div>
                         </li>
                         <li class="nav-item">

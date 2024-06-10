@@ -6,11 +6,14 @@
                 if($user){
                     $_SESSION['user'] = $user;
                     header('Location:?ctrl=page&view=home');
+                } else{
+                    echo "<script type='text/javascript'>alert('Email hoặc mật khẩu không đúng');</script>";
                 }
             }            
             include_once 'view/header.php';
             include 'view/login.php';
             include_once 'view/footer.php';
+            break;
         case 'register':
             if($_SERVER['REQUEST_METHOD']=='POST'){
                 if(checkEmail($_POST['email'])){
@@ -27,10 +30,11 @@
             include_once 'view/header.php';
             include 'view/register.php';
             include_once 'view/footer.php';
+            header('Location:?ctrl=user&view=login');
             break;
         case 'logout':
             unset($_SESSION['user']);
-            header('Location:?ctrl=user&view=login');
+            header('Location: ?ctrl=page&view=home');    
             break;
         case 'profile':
             if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -45,7 +49,7 @@
                 $_SESSION['user']['address'] = $address;
                 $_SESSION['user']['phone'] = $phone;
                 $_SESSION['user']['email'] = $email;
-
+                echo "<script type='text/javascript'>alert('Cập nhật thông tin thành công');</script>";
                 
                 if(strlen($password>0)){
                     if($password!=$repassword){

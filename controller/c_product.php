@@ -52,7 +52,7 @@
                 ]);
             }
             header('Location: ?ctrl=product&view=cart');
-            break;            
+            break;             
         case 'removeCart':
             $index = $_GET['index'];
             array_splice($_SESSION['cart'],$index,1);
@@ -77,10 +77,27 @@
             header('Location: ?ctrl=product&view=cart');
             break;
         case 'checkout':
+            if($_POST['orders']){
+                $code = "33Shop".rand(1,9999);
+                $iduser = $_SESSION['user']['iduser'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $name_nhan = $_POST['name_nhan'];
+                $email_nhan = $_POST['email_nhan'];
+                $phone_nhan = $_POST['phone_nhan'];
+                $payment=$_POST['payment'];
+                $idbill = bill_add($code, $iduser, $name, $email, $phone, $address, $name_nhan, $phone_nhan, $address_nhan, $payment, $total);  
+            }
+            echo $code; 
             include_once 'view/header.php';
             include 'view/checkout.php';
             include_once 'view/footer.php';
-            break;     
+            break;
+        case 'confirm_order':
+            
+            // header('Location: ?ctrl=page&view=home');    
         default:
             include_once 'view/home.php';
             break;

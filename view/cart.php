@@ -63,6 +63,7 @@
                 </tbody>
             </table>
             <a href="?ctrl=product&view=removeAllCart" class="btn btn-primary mt-2">Xóa giỏ hàng</a>
+            <a href="?ctrl=page&view=product" class="btn btn-primary mt-2">Tiếp tục mua hàng</a>
         </div>
         <div class="col-lg-4">
             <form class="mb-5" action="">

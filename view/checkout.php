@@ -1,120 +1,108 @@
- <!-- Page Header Start -->
- <div class="container-fluid bg-secondary mb-5">
-     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-         <h1 class="font-weight-semi-bold text-uppercase mb-3">THANH TOÁN</h1>
-         <div class="d-inline-flex">
-             <p class="m-0"><a href="">Trang chủ</a></p>
-             <p class="m-0 px-2">-</p>
-             <p class="m-0">Thanh toán</p>
-         </div>
-     </div>
- </div>
- <!-- Page Header End -->
+<?php
+    $html_bill='';
+    foreach ($_SESSION['cart'] as $sp){
+        $html_bill .= '<tr>
+                        <td>'.$sp['tensp'].'</td>
+                        <td style="text-align: right;">'.$sp['soluong'].'</td>
+                       </tr>';
+    }
+?>
+<!-- Page Header Start -->
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">THANH TOÁN</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Trang chủ</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Thanh toán</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
 
 
- <!-- Checkout Start -->
- <div class="container-fluid pt-5">
-     <div class="row px-xl-5">
-         <div class="col-lg-8">
-             <div class="mb-4">
-                 <h4 class="font-weight-semi-bold mb-4">Thông tin hóa đơn</h4>
-                 <div class="row">
-                     <div class="col-md-6 form-group">
-                         <label>Họ tên</label>
-                         <input class="form-control" type="text" placeholder="John">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>E-mail</label>
-                         <input class="form-control" type="text" placeholder="example@email.com">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>SĐT</label>
-                         <input class="form-control" type="text" placeholder="+123 456 789">
-                     </div>
-                     <div class="col form-group">
-                         <label>Địa chỉ</label>
-                         <input class="form-control" type="text" placeholder="123 Street">
-                     </div>
-                     <div class="col-md-12 form-group">
-                         <div class="custom-control custom-checkbox">
-                             <input type="checkbox" class="custom-control-input" id="shipto">
-                             <label class="custom-control-label" for="shipto" data-toggle="collapse"
-                                 data-target="#shipping-address">Ship to different address</label>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="collapse mb-4" id="shipping-address">
-                 <h4 class="font-weight-semi-bold mb-4">Shipping Address</h4>
-                 <div class="row">
-                     <div class="col-md-6 form-group">
-                         <label>First Name</label>
-                         <input class="form-control" type="text" placeholder="John">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>Last Name</label>
-                         <input class="form-control" type="text" placeholder="Doe">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>E-mail</label>
-                         <input class="form-control" type="text" placeholder="example@email.com">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>Mobile No</label>
-                         <input class="form-control" type="text" placeholder="+123 456 789">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>Address Line 1</label>
-                         <input class="form-control" type="text" placeholder="123 Street">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>Address Line 2</label>
-                         <input class="form-control" type="text" placeholder="123 Street">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>Country</label>
-                         <select class="custom-select">
-                             <option selected>United States</option>
-                             <option>Afghanistan</option>
-                             <option>Albania</option>
-                             <option>Algeria</option>
-                         </select>
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>City</label>
-                         <input class="form-control" type="text" placeholder="New York">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>State</label>
-                         <input class="form-control" type="text" placeholder="New York">
-                     </div>
-                     <div class="col-md-6 form-group">
-                         <label>ZIP Code</label>
-                         <input class="form-control" type="text" placeholder="123">
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4">
-             <div class="card border-secondary mb-5">
-                 <div class="card-header bg-secondary border-0">
-                     <h4 class="font-weight-semi-bold m-0">Order Total</h4>
-                 </div>
-                 <div class="card-body">
-                     <h5 class="font-weight-medium mb-3">Products</h5>
-                     <div class="d-flex justify-content-between">
-                         <p>Colorful Stylish Shirt 1</p>
-                         <p>$150</p>
-                     </div>
-                     <div class="d-flex justify-content-between">
-                         <p>Colorful Stylish Shirt 2</p>
-                         <p>$150</p>
-                     </div>
-                     <div class="d-flex justify-content-between">
-                         <p>Colorful Stylish Shirt 3</p>
-                         <p>$150</p>
-                     </div>
-                     <hr class="mt-0">
+<!-- Checkout Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <form action="?ctrl=product&view=confirm_order" method="post">
+                    <h4 class="font-weight-semi-bold mb-4">Thông tin hóa đơn</h4>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Họ tên</label>
+                            <input class="form-control" type="text" name="name" placeholder="Thang"
+                                value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['name'] : ''; ?>">
+                        </div>
+                        <div class=" col-md-6 form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" type="text" name="email" placeholder="example@email.com"
+                                value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['email'] : ''; ?>">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>SĐT</label>
+                            <input class="form-control" type="text" name="phone" placeholder="+123 456 789"
+                                value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['phone'] : ''; ?>">
+                        </div>
+                        <div class="col form-group">
+                            <label>Địa chỉ</label>
+                            <input class="form-control" type="text" name="address" placeholder="123 Street"
+                                value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['address'] : ''; ?>">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="shipto">
+                                <label class="custom-control-label" for="shipto" data-toggle="collapse"
+                                    data-target="#shipping-address">Giao địa chỉ khác</label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="collapse mb-4" id="shipping-address">
+                <h4 class="font-weight-semi-bold mb-4">Địa chỉ giao</h4>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Họ Tên</label>
+                        <input class="form-control" type="text" name="name_nhan" id="ten_nhan" placeholder="Thang">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>E-mail</label>
+                        <input class="form-control" type="text" name="email_nhan" id="email_nhan"
+                            placeholder="example@email.com">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Số điện thoại</label>
+                        <input class="form-control" type="text" name="phone_nhan" id="phone_nhan"
+                            placeholder="+123 456 789">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Địa chỉ</label>
+                        <input class="form-control" type="text" name="address_nhan" id="address_nhan"
+                            placeholder="123 Street">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="font-weight-semi-bold m-0">Thông tin đơn hàng</h4>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Tên sản phẩm</td>
+                                    <td>Số lượng</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?=$html_bill?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <hr class="mt-0">
                      <div class="d-flex justify-content-between mb-3 pt-1">
                          <h6 class="font-weight-medium">Subtotal</h6>
                          <h6 class="font-weight-medium">$150</h6>
@@ -122,44 +110,53 @@
                      <div class="d-flex justify-content-between">
                          <h6 class="font-weight-medium">Shipping</h6>
                          <h6 class="font-weight-medium">$10</h6>
-                     </div>
-                 </div>
-                 <div class="card-footer border-secondary bg-transparent">
-                     <div class="d-flex justify-content-between mt-2">
-                         <h5 class="font-weight-bold">Total</h5>
-                         <h5 class="font-weight-bold">$160</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="card border-secondary mb-5">
-                 <div class="card-header bg-secondary border-0">
-                     <h4 class="font-weight-semi-bold m-0">Payment</h4>
-                 </div>
-                 <div class="card-body">
-                     <div class="form-group">
-                         <div class="custom-control custom-radio">
-                             <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                             <label class="custom-control-label" for="paypal">Paypal</label>
-                         </div>
-                     </div>
-                     <div class="form-group">
-                         <div class="custom-control custom-radio">
-                             <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                             <label class="custom-control-label" for="directcheck">Direct Check</label>
-                         </div>
-                     </div>
-                     <div class="">
-                         <div class="custom-control custom-radio">
-                             <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                             <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="card-footer border-secondary bg-transparent">
-                     <button class="btn-primary font-weight-bold my-3">Place Order</button>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- Checkout End -->
+                     </div> -->
+                </div>
+                <div class="card-footer border-secondary bg-transparent">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="font-weight-bold">Total</h5>
+                        <h5 class="font-weight-bold"></h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="font-weight-semi-bold m-0">Hình thức thanh toán</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="payment" value="1" id="momo">
+                            <label class="custom-control-label" for="paypal">Thanh toán MOMO</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="payment" value="2" id="direct">
+                            <label class="custom-control-label" for="directcheck">Thanh toán trực tiếp</label>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="payment" value="3" id="banktransfer">
+                            <label class="custom-control-label" for="banktransfer">Chuyển khoản ngân hàng</label>
+                        </div>
+                    </div>
+                </div>
+                <?php if(isset($_SESSION['user'])): ?>
+                <div class="card-footer border-secondary bg-transparent">
+                    <button type="submit" name="orders" class="btn-primary font-weight-bold my-3">Thanh toán</button>
+                </div>
+                <?php else: ?>
+                <div class="card-footer border-secondary bg-transparent">
+                    <button type="submit" class="btn-primary font-weight-bold my-3"><a href="?ctrl=user&view=login">Đăng
+                            nhập để thanh toán</a></button>
+                </div>
+            </div>
+            </form>
+            <?php endif ?>
+        </div>
+    </div>
+</div>
+<!-- Checkout End -->

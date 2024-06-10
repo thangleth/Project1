@@ -142,7 +142,7 @@
     <div class="row px-xl-5">
         <div class="col-md-6 pb-4">
             <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-                <img src="view/layout/img/promotion1.jpg" alt="">
+                <img src="" alt="">
                 <div class="position-relative" style="z-index: 1;">
                     <h5 class="text-uppercase text-primary mb-3">Giảm 10% cho tất cả các đơn hàng </h5>
                     <h1 class="mb-4 font-weight-semi-bold">Giày thể thao</h1>
@@ -152,7 +152,7 @@
         </div>
         <div class="col-md-6 pb-4">
             <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-                <img src="view/layout/img/promotion2.jpg" alt="">
+                <img src="" alt="">
                 <div class="position-relative" style="z-index: 1;">
                     <h5 class="text-uppercase text-primary mb-3">Giảm 10% cho tất cả các đơn hàng</h5>
                     <h1 class="mb-4 font-weight-semi-bold">Phụ kiện</h1>

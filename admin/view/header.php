@@ -30,8 +30,8 @@
                         <a href="index.php"><i class="fa-solid fa-house ico-side"></i>Dashboards</a>
                     </li>
                     <li>
-                        <a href="index.php?page=product"><i class="fa-solid fa-cart-shopping ico-side"></i>Quản kí đơn
-                            hàng</a>
+                        <a href="index.php?page=comment"><i class="fa-solid fa-cart-shopping ico-side"></i>Quản kí bình
+                            luận</a>
                     </li>
                     <li>
                         <a href="index.php?page=catalog"><i class="fa-solid fa-folder-open ico-side"></i>Quản lí danh

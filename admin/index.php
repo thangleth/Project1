@@ -1,14 +1,18 @@
 <?php
+    session_start();
     ob_start();
     include '../models/global.php';
     include '../models/connect.php';
     include '../models/product.php';
     include '../models/category.php';
     include '../models/user.php';
+    include '../models/comment.php';
     include 'view/header.php';
-    if (!isset($_GET['page'])) {
-        include "view/home.php";
-    } else {
+
+        // Check if the user is logged in
+        if (!isset($_SESSION['admin'])) {
+            header('Location: login.php');
+        }else{
         switch ($_GET['page']) {
             case 'product':
                 $danhmuc = get_catalog_list();
@@ -170,6 +174,7 @@
                 if (isset($_POST['btnupdateuser'])) {
                     $iduser = $_POST['iduser'];
                     $name = $_POST['name'];
+                    $email = $_POST['email'];
                     $password = $_POST['password'];
                     $phone = $_POST['phone'];
                     $address = $_POST['address'];
@@ -180,7 +185,7 @@
                         move_uploaded_file($_FILES["image"]["tmp_name"], $img_user);
                         $img_cu = '../' . PATH_IMG .$_POST['imgcu'];
                         if(file_exists($img_cu));
-                        update_user($iduser,$name, $password, $phone, $img, $address, $role);
+                        update_user($iduser, $name,$email, $password, $phone, $img, $address, $role);
                     }else{
                         $img='';
                     }
@@ -196,10 +201,20 @@
                 $nguoidung = get_user_list();
                 include "view/updateuserform.php";
                 break;
+            case 'comment':
+                $comment = get_comment_list();
+                include "view/comment.php";
+                break;
+            case 'deletecomment':
+                if (isset($_GET['idbl']) && ($_GET['idbl'] > 0)) {
+                    $idbl = $_GET['idbl'];
+                    delete_comment($idbl);
+                }
+                $comment = get_comment_list();
+                header('location:index.php?page=comment');
+                break;
             default:
                 include 'view/home.php';
                 break;
-        }
-    
-    }
+        }}
 ?>

@@ -15,9 +15,14 @@ if ($img_user != '') {
     <div class="modal-body">
         <form class="addPro" action="index.php?page=updateuser" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="name">Tên người dùng:</label>
-                <input type="text" class="form-control" name="name" id="name" value="<?= $user_name ?>"
+                <label for="name">Tên:</label>
+                <input type="text" class="form-control" name="name" id="name" value="<?= $name ?>"
                     placeholder="Nhập tên người dùng">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" name="email" id="email" value="<?= $email ?>"
+                    placeholder="Nhập email người dùng">
             </div>
             <div class="form-group">
                 <label for="exampleInputFile">Ảnh:</label>

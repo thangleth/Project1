@@ -1,28 +1,15 @@
 <?php
-$user_html = '';
-if (isset($nguoidung) &&  count($nguoidung) > 0) {
+$comment_html = '';
+if (isset($comment) &&  count($comment) > 0) {
     $i = 1;
-    foreach ($nguoidung as $item) {
+    foreach ($comment as $item) {
         extract($item);
-        $img = ''; 
-        if ($img_user!= '') {
-            $img_file = '../' . PATH_IMG . $img_user;
-            if (file_exists($img_file)) {
-                $img = '<img src="' . $img_file . '" alt="Avatar" style="width: 120px;">';
-            }
-        }
-        $linkedit = '<a href="index.php?page=updateuserform&iduser=' . $iduser . '" class="btn btn-warning">Sửa</a>';
-        $linkdelete = '<a href="index.php?page=deleteuser&iduser=' . $iduser. '" class="btn btn-danger"> Xóa</a>';
-        $user_html .= '<tr>
+        $linkdelete = '<a href="index.php?page=deleteuser&idbl=' . $idbl. '" class="btn btn-danger"> Xóa</a>';
+        $comment_html .= '<tr>
                         <td>' . $i . '</td>
-                        <td>' . $name. '</td>
-                        <td>' . $email . '</td>
-                        <td>' . $img . '</td>
-                        <td>' . $password . '</td>
-                        <td>' . $phone . '</td>
-                        <td>' . $address . '</td>
-                        <td>' . $role . '</td>
-                        <td>' . $linkedit . '' . $linkdelete . '</td>
+                        <td>' . $noidung. '</td>
+                        <td>' . $ngaytao . '</td>
+                        <td>' . $linkdelete . '</td>
                     </tr>';
         $i++;
     }
@@ -99,27 +86,17 @@ if (isset($nguoidung) &&  count($nguoidung) > 0) {
         <thead>
             <tr>
                 <th>STT</th>
-                <th>Tên</th>
-                <th>Tên đăng nhập</th>
-                <th>Avatar</th>
-                <th>Mật khẩu</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
-                <th>Vai trò</th>
+                <th>Nội dung</th>
+                <th>Ngày bình luận</th>
                 <th>Thao tác</th>
             </tr>
         </thead>
-        <tbody><?= $user_html ?></tbody>
+        <tbody><?= $comment_html ?></tbody>
         <tfoot>
             <tr>
                 <th>STT</th>
-                <th>Tên</th>
-                <th>Tên đăng nhập</th>
-                <th>Avatar</th>
-                <th>Mật khẩu</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
-                <th>Vai trò</th>
+                <th>Nội dung</th>
+                <th>Ngày bình luận</th>
                 <th>Thao tác</th>
             </tr>
         </tfoot>
