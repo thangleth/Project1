@@ -77,27 +77,35 @@
             header('Location: ?ctrl=product&view=cart');
             break;
         case 'checkout':
-            if($_POST['orders']){
-                $code = "33Shop".rand(1,9999);
-                $iduser = $_SESSION['user']['iduser'];
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $address = $_POST['address'];
-                $name_nhan = $_POST['name_nhan'];
-                $email_nhan = $_POST['email_nhan'];
-                $phone_nhan = $_POST['phone_nhan'];
-                $payment=$_POST['payment'];
-                $idbill = bill_add($code, $iduser, $name, $email, $phone, $address, $name_nhan, $phone_nhan, $address_nhan, $payment, $total);  
-            }
-            echo $code; 
+            var_dump($_SESSION['cart']);
             include_once 'view/header.php';
             include 'view/checkout.php';
             include_once 'view/footer.php';
             break;
         case 'confirm_order':
-            
-            // header('Location: ?ctrl=page&view=home');    
+            if(isset($_POST['orders'])){ 
+                $iduser = $_SESSION['user']['iduser'];
+                $code = "33Shop".$iduser.rand(1000,9999);
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $name_nhan = $_POST['name_nhan'];
+                $phone_nhan = $_POST['phone_nhan'];
+                $address_nhan = $_POST['address_nhan'];
+                $payment=$_POST['payment'];
+                $total=total_cart();
+                $order_id = bill_insert_id($code, $iduser, $name, $email, $phone, $address, $name_nhan, $phone_nhan, $address_nhan, $payment, $total);
+                foreach($_SESSION['cart'] as $item){
+                    extract($item);
+                    cart_insert($idsp, $tensp, $imgsp, $gia, $soluong, $total,$order_id);
+                }
+                
+            }
+            include_once 'view/header.php';
+            include 'view/bill.php';
+            include_once 'view/footer.php';
+            break;
         default:
             include_once 'view/home.php';
             break;

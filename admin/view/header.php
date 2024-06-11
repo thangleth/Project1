@@ -30,7 +30,7 @@
                         <a href="index.php"><i class="fa-solid fa-house ico-side"></i>Dashboards</a>
                     </li>
                     <li>
-                        <a href="index.php?page=comment"><i class="fa-solid fa-cart-shopping ico-side"></i>Quản kí bình
+                        <a href="index.php?page=comment"><i class="fa-solid fa-comment ico-side"></i>Quản kí bình
                             luận</a>
                     </li>
                     <li>
@@ -43,6 +43,15 @@
                     </li>
                     <li>
                         <a href="index.php?page=user"><i class="fa-solid fa-user ico-side"></i>Quản lí thành viên</a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=bill"><i class="fa-solid fa-shopping-cart ico-side"></i>Quản lí đơn
+                            hàng</a>
+                    </li>
+                    <li>
+                        <a href="../index.php?ctrl=page&view=home"><i class="fa-solid fa-sign-out-alt ico-side"></i>Quay
+                            về
+                            trang chủ</a>
                     </li>
                 </ul>
             </nav>

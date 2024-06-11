@@ -11,7 +11,7 @@ if (isset($nguoidung) &&  count($nguoidung) > 0) {
                 $img = '<img src="' . $img_file . '" alt="Avatar" style="width: 120px;">';
             }
         }
-        $linkedit = '<a href="index.php?page=updateuserform&iduser=' . $iduser . '" class="btn btn-warning">Sửa</a>';
+        $linkedit = '<a href="index.php?page=updateuserform&iduser=' . $iduser . '" class="btn btn-warning m-1">Sửa</a>';
         $linkdelete = '<a href="index.php?page=deleteuser&iduser=' . $iduser. '" class="btn btn-danger"> Xóa</a>';
         $user_html .= '<tr>
                         <td>' . $i . '</td>

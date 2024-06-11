@@ -13,7 +13,7 @@
         } else {
             $img = '';
         }
-        $linkedit = '<a href="index.php?page=updatespform&idsp=' . $idsp . '" class="btn btn-warning">Sửa</a>';
+        $linkedit = '<a href="index.php?page=updatespform&idsp=' . $idsp . '" class="btn btn-warning m-1">Sửa</a>';
         $linkdelete = '<a href="index.php?page=deletesp&idsp=' . $idsp . '" class="btn btn-danger"> Xóa</a>';
         $product_html .= '<tr>
                                     <td>' . $stt . '</td>

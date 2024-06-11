@@ -13,7 +13,7 @@ $stt = 1;
         } else {
             $img = '';
         }
-        $linkedit = '<a href="index.php?page=updatedmform&iddm=' . $iddm . '" class="btn btn-warning">Sửa</a>';
+        $linkedit = '<a href="index.php?page=updatedmform&iddm=' . $iddm . '" class="btn btn-warning m-1">Sửa</a>';
         $linkdelete = '<a href="index.php?page=deletedm&iddm=' . $iddm . '" class="btn btn-danger"> Xóa</a>';
         $catalog_html .= '<tr>
                                         <td>' . $stt . '</td>

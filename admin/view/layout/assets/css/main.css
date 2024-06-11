@@ -165,3 +165,11 @@ nav ul li a:hover {
   margin-right: 10px;
   /* Adjust the margin as needed */
 }
+.sticky-col {
+  position: sticky;
+  left: 0;
+  background-color: #f8f9fa; /* Màu nền cho cột cố định */
+  z-index: 1;
+  width: 100px; /* Đảm bảo cột cố định hiển thị trên cùng */
+}
+

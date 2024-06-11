@@ -95,5 +95,18 @@
         $prolist=pdo_query($sql);
         return count($prolist);
     }
-    
+    function total_cart(){
+        $tong = 0;
+        foreach($_SESSION['cart'] as $item){
+            extract($item);
+            $total = (Int)$gia*(Int)$soluong;
+            $tong+=$total;
+        }
+        return $tong;
+    }
+    function cart_insert($idsp, $tensp, $imgsp, $gia, $soluong, $total,$orders_id){
+    $sql = "INSERT INTO order_detail (idsp, tensp, imgsp, gia, soluong, total,orders_id) VALUES (?,?,?,?,?,?,?)";
+    $params = [$idsp, $tensp, $imgsp, $gia, $soluong, $total, $orders_id];
+    return pdo_execute($sql, $params);
+    }
 ?>

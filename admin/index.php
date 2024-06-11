@@ -7,12 +7,10 @@
     include '../models/category.php';
     include '../models/user.php';
     include '../models/comment.php';
+    include '../models/bill.php';
     include 'view/header.php';
 
-        // Check if the user is logged in
-        if (!isset($_SESSION['admin'])) {
-            header('Location: login.php');
-        }else{
+        
         switch ($_GET['page']) {
             case 'product':
                 $danhmuc = get_catalog_list();
@@ -213,8 +211,35 @@
                 $comment = get_comment_list();
                 header('location:index.php?page=comment');
                 break;
+            case 'bill':
+                $bill = get_bill();
+                include "view/bill.php";
+                break;
+            case 'updateuser':
+                if (isset($_POST['btnupdateuser'])) {
+                    $iduser = $_POST['iduser'];
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $phone = $_POST['phone'];
+                    $address = $_POST['address'];
+                    $role = $_POST['role'];
+                    $img = $_FILES['image']['name'];
+                    if ($img != '') {
+                        $img_user = '../' . PATH_IMG . $img;
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $img_user);
+                        $img_cu = '../' . PATH_IMG .$_POST['imgcu'];
+                        if(file_exists($img_cu));
+                        update_user($iduser, $name,$email, $password, $phone, $img, $address, $role);
+                    }else{
+                        $img='';
+                    }
+                }   
+                $nguoidung = get_user_list();
+                include "view/user.php";
+                break;
             default:
                 include 'view/home.php';
                 break;
-        }}
+        }
 ?>

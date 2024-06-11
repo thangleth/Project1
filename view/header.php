@@ -118,6 +118,9 @@
                         </a>
                         <li class="nav-item dropdown">
                             <div class="dropdown-menu dropdown-menu-right rounded-0 m-0">
+                                <?php if($_SESSION['user']['role'] == 1):?>
+                                <a href="admin/index.php?page=product" class="dropdown-item">Trang quản trị</a>
+                                <?php endif ?>
                                 <a href="?ctrl=user&view=profile" class="dropdown-item">Hồ sơ</a>
                                 <a href="?ctrl=user&view=logout" class="dropdown-item">Đăng xuất</a>
                             </div>

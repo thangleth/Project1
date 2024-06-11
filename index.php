@@ -7,6 +7,7 @@
     include "models/category.php";
     include "models/user.php";
     include "models/comment.php";
+    include "models/bill.php";
 
     switch ($_GET['ctrl']) {
         case 'page':

@@ -5,7 +5,11 @@
                 $user = user_login($_POST['email'],$_POST['password']);
                 if($user){
                     $_SESSION['user'] = $user;
-                    header('Location:?ctrl=page&view=home');
+                    if ($user['role'] == 1) {
+                        header('Location:admin/index.php?page=product'); // Redirect to admin page
+                    } else {
+                        header('Location: ?ctrl=page&view=home'); // Redirect to home page
+                    }
                 } else{
                     echo "<script type='text/javascript'>alert('Email hoặc mật khẩu không đúng');</script>";
                 }

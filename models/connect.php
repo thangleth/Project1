@@ -60,17 +60,17 @@ function pdo_execute($sql, $params = []) {
 }
 
 function pdo_execute_id($sql, $params = []) {
-    $sql_args = array_slice(func_get_args(), 1);
     try {
         $conn = connectdb();
         $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
-        return $conn -> lastInsertId();
+        $stmt->execute($params); // Sử dụng $params trực tiếp
+        return $conn->lastInsertId();
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
         throw $e;
     }
 }
+
 
 // sử dụng cho insert và delete sql
 function exec_sql($sql){
