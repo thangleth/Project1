@@ -131,19 +131,20 @@
                 <div class="card-body">
                     <div class="form-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="payment" value="1" id="momo">
+                            <input type="radio" class="custom-control-input" name="payment" value="momo" id="momo">
                             <label class="custom-control-label" for="momo">Thanh toán MOMO</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="payment" value="2" id="direct">
+                            <input type="radio" class="custom-control-input" name="payment" value="direct" id="direct">
                             <label class="custom-control-label" for="direct">Thanh toán trực tiếp</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="payment" value="3" id="banktransfer">
+                            <input type="radio" class="custom-control-input" name="payment" value="banktransfer"
+                                id="banktransfer">
                             <label class="custom-control-label" for="banktransfer">Chuyển khoản ngân hàng</label>
                         </div>
                     </div>

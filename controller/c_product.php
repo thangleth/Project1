@@ -100,7 +100,7 @@
                     extract($item);
                     cart_insert($idsp, $tensp, $imgsp, $gia, $soluong, $total,$order_id);
                 }
-                
+                unset($_SESSION['cart']);
             }
             include_once 'view/header.php';
             include 'view/bill.php';

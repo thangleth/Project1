@@ -215,28 +215,28 @@
                 $bill = get_bill();
                 include "view/bill.php";
                 break;
-            case 'updateuser':
-                if (isset($_POST['btnupdateuser'])) {
-                    $iduser = $_POST['iduser'];
-                    $name = $_POST['name'];
-                    $email = $_POST['email'];
-                    $password = $_POST['password'];
-                    $phone = $_POST['phone'];
-                    $address = $_POST['address'];
-                    $role = $_POST['role'];
-                    $img = $_FILES['image']['name'];
-                    if ($img != '') {
-                        $img_user = '../' . PATH_IMG . $img;
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $img_user);
-                        $img_cu = '../' . PATH_IMG .$_POST['imgcu'];
-                        if(file_exists($img_cu));
-                        update_user($iduser, $name,$email, $password, $phone, $img, $address, $role);
-                    }else{
-                        $img='';
-                    }
-                }   
-                $nguoidung = get_user_list();
-                include "view/user.php";
+            case 'bill_detail':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $id_billdetail= get_bill_detail_one($id);
+                }
+                include "view/bill_detail.php";
+                break;
+            case 'updatebillform':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $id_bill= get_bill_one($id);
+                }
+                include "view/updatebillform.php";
+                break;
+            case 'update_bill':
+                if (isset($_POST['btnupdatebill'])) {
+                    $id = $_POST['id'];
+                    $status = $_POST['status'];
+                }
+                update_bill($id,$status);   
+                $bill = get_bill();
+                include "view/bill.php";
                 break;
             default:
                 include 'view/home.php';
