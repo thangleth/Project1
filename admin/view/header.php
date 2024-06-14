@@ -27,7 +27,7 @@
             <nav class="sidebar bg-dark">
                 <ul>
                     <li>
-                        <a href="index.php"><i class="fa-solid fa-house ico-side"></i>Dashboards</a>
+                        <a href="index.php?page=home"><i class="fa-solid fa-house ico-side"></i>Dashboards</a>
                     </li>
                     <li>
                         <a href="index.php?page=comment"><i class="fa-solid fa-comment ico-side"></i>Quản kí bình

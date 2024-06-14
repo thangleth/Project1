@@ -6,7 +6,7 @@
                 if($user){
                     $_SESSION['user'] = $user;
                     if ($user['role'] == 1) {
-                        header('Location:admin/index.php?page=product'); // Redirect to admin page
+                        header('Location:admin/index.php?page=home'); // Redirect to admin page
                     } else {
                         header('Location: ?ctrl=page&view=home'); // Redirect to home page
                     }

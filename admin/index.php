@@ -12,6 +12,13 @@
 
         
         switch ($_GET['page']) {
+            case 'home':
+                $sanpham = get_product_list();
+                $danhmuc = get_catalog_list();
+                $nguoidung = get_user_list();
+                $bill = get_bill();
+                include "view/home.php";
+                break;
             case 'product':
                 $danhmuc = get_catalog_list();
                 $sanpham = get_product_list();
